@@ -1,11 +1,12 @@
 package drivers;
 
+import customexceptions.EmptyStackException;
 import datastructures.BinaryTree;
 import datastructures.BinaryTreeNode;
 
 public class DriverBT {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws EmptyStackException {
 		BinaryTree<Integer> bt = new BinaryTree<>(20);
 		BinaryTreeNode<Integer> root = bt.getRoot();
 		root.setLeft(new BinaryTreeNode<>(12));
@@ -30,6 +31,9 @@ public class DriverBT {
 		
 		System.out.println();
 		bt.levelOrderTraversalWithLevelsDisplayedSeparately();
+		
+		System.out.println();
+		bt.reverseLevelOrderTraversal();
 	}
 
 }

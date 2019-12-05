@@ -1,5 +1,7 @@
 package datastructures;
 
+import customexceptions.EmptyStackException;
+
 public class BinaryTree<T> {
 	private BinaryTreeNode<T> root;
 
@@ -125,5 +127,34 @@ public class BinaryTree<T> {
 				i++;
 			}
 		} 
+	}
+	
+	public void reverseLevelOrderTraversal() throws EmptyStackException {
+		SinglyLinkedList<T> list = convertTreeToList();
+		SinglyLinkedList<T> tempList=new SinglyLinkedList<>();
+		StackUsingLL<SinglyLinkedList<T>> stkOfLists=new StackUsingLL<>();
+		if (list.getHead() != null) {
+			SinglyNode<T> temp = list.getHead();
+			int limit=1;
+			int i=1;
+			while (temp != null) {
+				if(i<=limit) {
+					tempList.insertAtEnd(temp.getData());
+				}else {
+					stkOfLists.push(tempList);
+					tempList=new SinglyLinkedList<>();
+					tempList.insertAtEnd(temp.getData());
+					limit+=limit*2;
+				}
+				temp = temp.getNext();
+				i++;
+			}
+			stkOfLists.push(tempList);
+		}
+		
+		while(stkOfLists.getSize()!=0) {
+			tempList=stkOfLists.pop();
+			tempList.displayList();
+		}
 	}
 }
