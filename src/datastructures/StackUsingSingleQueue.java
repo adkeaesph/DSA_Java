@@ -1,55 +1,57 @@
 package datastructures;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
+import customexceptions.EmptyQueueException;
 import customexceptions.EmptyStackException;
 
 public class StackUsingSingleQueue<T> {
-	private Queue<T> q;
-	
+	private QueueUsingLL<T> q;
+
 	public StackUsingSingleQueue() {
-		q=new LinkedList<>();
+		q = new QueueUsingLL<>();
 	}
-	
-	public void push(T data) {
-		q.add(data);
-		int len=q.size();
-		if(len==1) {
+
+	public void push(T data) throws EmptyQueueException {
+		q.enqueue(data);
+		int len = q.getSize();
+		if (len == 1) {
 			return;
 		}
-		
-		for(int i=1;i<=len-1;i++) {
-			T removed=q.remove();
-			q.add(removed);
+
+		for (int i = 1; i <= len - 1; i++) {
+			T removed = q.dequeue();
+			q.enqueue(removed);
 		}
 	}
-	
-	public T pop() throws EmptyStackException{
-		if(q.isEmpty())
+
+	public T pop() throws EmptyStackException {
+		T popped = null;
+		try {
+			popped = q.dequeue();
+		} catch (EmptyQueueException e) {
 			throw new EmptyStackException("Stack is empty!!!");
-		return q.remove();
+		}
+		return popped;
 	}
-	
+
 	public T peek() throws EmptyStackException {
-		if(q.isEmpty())
+		T peeked = null;
+		try {
+			peeked = q.peekFront();
+		} catch (EmptyQueueException e) {
 			throw new EmptyStackException("Stack is empty!!!");
-		return q.poll();
+		}
+		return peeked;
 	}
-	
+
 	public int getSize() {
-		return q.size();
+		return q.getSize();
 	}
-	
+
 	public void displayStackContents() throws EmptyStackException {
-		if(q.isEmpty())
+		try {
+			q.displayQueueContents();
+		} catch (EmptyQueueException e) {
 			throw new EmptyStackException("Stack is empty!!!");
-		
-		System.out.println("Stack contents from top to bottom: ");
-		for(int i=0;i<q.size();i++) {
-			T dropped=q.remove();
-			System.out.println(dropped);
-			q.add(dropped);
 		}
 	}
 }

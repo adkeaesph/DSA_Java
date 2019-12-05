@@ -3,7 +3,7 @@ package problemsonstack;
 import java.util.Scanner;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class InfixToPostfix {
 
@@ -15,7 +15,7 @@ public class InfixToPostfix {
 		return -1;
 	}
 	private static String convertInfixToPostfix(String infixExpression) throws EmptyStackException {
-		LLStack<Character> symbolStack=new LLStack<>();
+		StackUsingLL<Character> symbolStack=new StackUsingLL<>();
 		String postfixExpression="";
 		int strlen=infixExpression.length();
 		

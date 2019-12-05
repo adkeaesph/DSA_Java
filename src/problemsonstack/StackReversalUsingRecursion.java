@@ -1,17 +1,17 @@
 package problemsonstack;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class StackReversalUsingRecursion {
 	
-	public static LLStack<Integer> reverseStack(LLStack<Integer> stk) throws EmptyStackException {
-		LLStack<Integer> result=new LLStack<>();
+	public static StackUsingLL<Integer> reverseStack(StackUsingLL<Integer> stk) throws EmptyStackException {
+		StackUsingLL<Integer> result=new StackUsingLL<>();
 		coreReverseStack(stk,result);
 		return result;
 	}
 	
-	public static LLStack<Integer> coreReverseStack(LLStack<Integer> stk, LLStack<Integer> res) throws EmptyStackException{
+	public static StackUsingLL<Integer> coreReverseStack(StackUsingLL<Integer> stk, StackUsingLL<Integer> res) throws EmptyStackException{
 		if(stk.getSize()==0)
 			return res;
 		
@@ -19,7 +19,7 @@ public class StackReversalUsingRecursion {
 		return coreReverseStack(stk, res);
 	}
 	public static void main(String[] args) throws EmptyStackException {
-		LLStack<Integer> stk=new LLStack<>();
+		StackUsingLL<Integer> stk=new StackUsingLL<>();
 		stk.push(1);
 		stk.push(2);
 		stk.push(3);

@@ -3,12 +3,12 @@ package drivers;
 import java.util.Scanner;
 
 import customexceptions.EmptyStackException;
-import datastructures.QueueUsingStack1;
+import datastructures.QueueUsingStk1;
 
 public class DriverQUS1 {
 
 	public static void main(String[] args) {
-		QueueUsingStack1<Integer> q = new QueueUsingStack1<Integer>();
+		QueueUsingStk1<Integer> q = new QueueUsingStk1<Integer>();
 		Scanner sc = new Scanner(System.in);
 		int choice;
 		Integer data;

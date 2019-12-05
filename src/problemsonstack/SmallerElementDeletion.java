@@ -1,7 +1,7 @@
 package problemsonstack;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 import datastructures.SinglyLinkedList;
 
 /* Problem Statement : Given an array arr[] and a number k. The task is to delete k elements which are 
@@ -12,7 +12,7 @@ public class SmallerElementDeletion {
 
 	public static SinglyLinkedList<Integer> deleteSmallerElements(Integer[] arr, int k) throws EmptyStackException {
 		int len = arr.length;
-		LLStack<Integer> stk = new LLStack<>();
+		StackUsingLL<Integer> stk = new StackUsingLL<>();
 		int j = 0;
 		for (int i = 0; i < len; i++) {
 			if (stk.getSize() == 0)

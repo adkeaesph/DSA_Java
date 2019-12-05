@@ -1,13 +1,13 @@
 package problemsonstack;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class SortingArrayUsingStack {
 
 	public static Integer[] sortArray(Integer[] arr) throws EmptyStackException {
-		LLStack<Integer> sortedStk = new LLStack<Integer>();
-		LLStack<Integer> auxStk = new LLStack<Integer>();
+		StackUsingLL<Integer> sortedStk = new StackUsingLL<Integer>();
+		StackUsingLL<Integer> auxStk = new StackUsingLL<Integer>();
 
 		int len = arr.length;
 		for (int i = 0; i < len; i++) {	//	another way is maintain only one stack in order; when a number 

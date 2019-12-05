@@ -2,14 +2,16 @@ package drivers;
 
 import java.util.Scanner;
 
+import customexceptions.EmptyQueueException;
 import datastructures.StackUsingSingleQueue;
 
 public class DriverSUSQ {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws EmptyQueueException {
 		StackUsingSingleQueue<Integer> stack = new StackUsingSingleQueue<>();
 		Scanner scanner = new Scanner(System.in);
 		int choice;
 		while (true) {
+			System.out.println();
 			System.out.println("Press 1 to push an element onto stack");
 			System.out.println("Press 2 to pop an element from stack");
 			System.out.println("Press 3 to display contents of stack");
@@ -32,6 +34,7 @@ public class DriverSUSQ {
 				}
 			} else if (choice == 3) {
 				try {
+					System.out.println("Stack contents from top to bottom : ");
 					stack.displayStackContents();
 				} catch (Exception e) {
 					System.out.println(e.getMessage());

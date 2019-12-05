@@ -2,12 +2,12 @@ package datastructures;
 
 import customexceptions.EmptyQueueException;
 
-public class LLQueue<T> {
+public class QueueUsingLL<T> {
 	private SinglyNode<T> front;
 	private SinglyNode<T> rear;
 	private int size;
 
-	public LLQueue() {
+	public QueueUsingLL() {
 		front = new SinglyNode<>();
 		rear = front;
 		size = 0;

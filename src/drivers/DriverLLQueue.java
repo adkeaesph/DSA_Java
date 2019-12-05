@@ -2,11 +2,11 @@ package drivers;
 
 import java.util.Scanner;
 
-import datastructures.LLQueue;
+import datastructures.QueueUsingLL;
 
 public class DriverLLQueue {
 	public static void main(String[] args) {
-		LLQueue<Integer> q = new LLQueue<>();
+		QueueUsingLL<Integer> q = new QueueUsingLL<>();
 		Scanner scanner = new Scanner(System.in);
 		int choice;
 		while (true) {

@@ -3,13 +3,13 @@ package problemsonstack;
 import java.util.Scanner;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class BalancedParenthesisProblem {
 	public static boolean balancedParenthesis(String str) throws EmptyStackException{
         str=str.replace(" ","");
         int len=str.length();
-        LLStack<Character> stk=new LLStack<>();
+        StackUsingLL<Character> stk=new StackUsingLL<>();
         for(int i=0;i<len;i++){
             if(str.charAt(i)=='(' || str.charAt(i)=='[' || str.charAt(i)=='{')
                 stk.push(str.charAt(i));

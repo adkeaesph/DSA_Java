@@ -2,12 +2,12 @@ package datastructures;
 
 import customexceptions.EmptyStackException;
 
-public class LLStack<T> {
+public class StackUsingLL<T> {
 	private String stackId;
 	private int size;
 	private SinglyNode<T> top;	//stack_top end
 	
-	public LLStack() {
+	public StackUsingLL() {
 		top=new SinglyNode<>();
 		size=0;
 	}

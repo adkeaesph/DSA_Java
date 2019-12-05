@@ -5,13 +5,13 @@ import customexceptions.EmptyStackException;
 /*
  * queue with expensive dequeue operation
  */
-public class QueueUsingStack1<T> {
-	private LLStack<T> mainStk;
-	private LLStack<T> auxStk;
+public class QueueUsingStk1<T> {
+	private StackUsingLL<T> mainStk;
+	private StackUsingLL<T> auxStk;
 	
-	public QueueUsingStack1() {
-		mainStk=new LLStack<>();
-		auxStk=new LLStack<>();
+	public QueueUsingStk1() {
+		mainStk=new StackUsingLL<>();
+		auxStk=new StackUsingLL<>();
 	}
 	
 	public int getSize() {

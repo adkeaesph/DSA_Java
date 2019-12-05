@@ -2,11 +2,11 @@ package datastructures;
 
 import customexceptions.EmptyStackException;
 
-public class ArrayStack {
+public class StackUsingArray {
 	private int arr_len;
-    private int arr[];
+    private int[] arr;
     private int top;
-    public ArrayStack(){
+    public StackUsingArray(){
         arr_len=10;
         arr=new int[arr_len];
         top=-1;

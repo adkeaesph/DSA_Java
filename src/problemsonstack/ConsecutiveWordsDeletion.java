@@ -1,14 +1,14 @@
 package problemsonstack;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class ConsecutiveWordsDeletion {
 
 	public static String deleteConsecutiveSameWords(String str) throws EmptyStackException {
 		int len=str.length();
 		String temp="";
-		LLStack<String> stk=new LLStack<>();
+		StackUsingLL<String> stk=new StackUsingLL<>();
 		for(int i=0;i<len;i++) {
 			if(str.charAt(i)!=' ') {
 				temp+=str.charAt(i);

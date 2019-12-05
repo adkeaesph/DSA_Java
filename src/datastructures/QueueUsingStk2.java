@@ -2,13 +2,13 @@ package datastructures;
 
 import customexceptions.EmptyStackException;
 
-public class QueueUsingStack2<T> {
-	private LLStack<T> mainStk;
-	private LLStack<T> auxStk;
+public class QueueUsingStk2<T> {
+	private StackUsingLL<T> mainStk;
+	private StackUsingLL<T> auxStk;
 	
-	public QueueUsingStack2(){
-		mainStk=new LLStack<>();
-		auxStk=new LLStack<>();
+	public QueueUsingStk2(){
+		mainStk=new StackUsingLL<>();
+		auxStk=new StackUsingLL<>();
 	}
 	
 	public void enqueue(T data) throws EmptyStackException {

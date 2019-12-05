@@ -1,14 +1,14 @@
 package problemsonstack;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class IndividualWordsReversal {
 
 	public static String reverseIndividualWords(String str) throws EmptyStackException {
 		String result="";
 		int len=str.length();
-		LLStack<Character> stack=new LLStack<>();
+		StackUsingLL<Character> stack=new StackUsingLL<>();
 		
 		for(int i=0;i<len;i++) {
 			if(str.charAt(i)==' ') {

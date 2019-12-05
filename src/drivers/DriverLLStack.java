@@ -2,12 +2,12 @@ package drivers;
 
 import java.util.Scanner;
 
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class DriverLLStack {
 
 	public static void main(String[] args) {
-		LLStack<Integer> stack = new LLStack<>();
+		StackUsingLL<Integer> stack = new StackUsingLL<>();
 		Scanner scanner = new Scanner(System.in);
 		int choice;
 		while (true) {

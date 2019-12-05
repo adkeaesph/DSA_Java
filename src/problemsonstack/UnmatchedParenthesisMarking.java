@@ -1,15 +1,15 @@
 package problemsonstack;
 
 import customexceptions.EmptyStackException;
-import datastructures.LLStack;
+import datastructures.StackUsingLL;
 
 public class UnmatchedParenthesisMarking {
 	
 	public static String markUnmatchedParentheses(String str) throws EmptyStackException {//string buffer can be used too
 		int len=str.length();
 		
-		LLStack<Character> symbolstk =new LLStack<>();
-		LLStack<Integer> indexstk =new LLStack<>();
+		StackUsingLL<Character> symbolstk =new StackUsingLL<>();
+		StackUsingLL<Integer> indexstk =new StackUsingLL<>();
 		for(int i=0;i<len;i++) {
 			if(symbolstk.getSize()==0) {
 				if(str.charAt(i)=='(' || str.charAt(i)==')') {

@@ -2,10 +2,10 @@ package datastructures;
 
 import customexceptions.EmptyStackException;
 
-public class LLSpecialStack extends LLStack<Integer> {
+public class StackSpclUsingLL extends StackUsingLL<Integer> {
 	private SinglyNode<Integer> min;
 
-	public LLSpecialStack() {
+	public StackSpclUsingLL() {
 		super();
 		min=new SinglyNode<>();
 	}
@@ -61,7 +61,7 @@ public class LLSpecialStack extends LLStack<Integer> {
 	}
 	
 	public static void main(String[] args) throws EmptyStackException {
-		LLSpecialStack stack=new LLSpecialStack();
+		StackSpclUsingLL stack=new StackSpclUsingLL();
 		stack.push(23);
 		stack.push(34);
 		stack.push(14);
