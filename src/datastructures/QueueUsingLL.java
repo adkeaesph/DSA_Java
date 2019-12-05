@@ -79,11 +79,13 @@ public class QueueUsingLL<T> {
 			throw new EmptyQueueException("Queue is empty!!!");
 
 		SinglyNode<T> temp = front;
+		System.out.println();
 		System.out.print("[");
 		while (temp != null) {
 			System.out.print(temp.getData() + " ");
 			temp = temp.getNext();
 		}
 		System.out.print("]");
+		System.out.println();
 	}
 }
