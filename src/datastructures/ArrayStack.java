@@ -1,35 +1,38 @@
 package datastructures;
 
+import customexceptions.EmptyStackException;
+
 public class ArrayStack {
 	private int arr_len;
     private int arr[];
     private int top;
-    ArrayStack(){
+    public ArrayStack(){
         arr_len=10;
         arr=new int[arr_len];
         top=-1;
     }
 
-    int getCapacity(){
+    public int getCapacity(){
         return arr_len;
     }
-    boolean isFull(){
+    
+    public boolean isFull(){
         if(top==arr_len-1)
             return true;
         return false;
     }
 
-    boolean isEmpty(){
+    public boolean isEmpty(){
         if(top==-1)
             return true;
         return false;
     }
 
-    int size(){
+    public int size(){
         return top+1;
     }
 
-    void push(int data){
+    public void push(int data){
         if(isFull()){
             int[] temp=new int[arr_len];
             for(int i=0;i<arr_len;i++)
@@ -44,11 +47,12 @@ public class ArrayStack {
         arr[top]=data;
     }
 
-    void pop(){
+    public int pop() throws EmptyStackException{
         if(isEmpty()){
-            System.out.println("Stack empty!!!");
-            return;
+            throw new EmptyStackException("Stack is empty!!!");
         }
+        
+        int removed=arr[top];
         top=top-1;
         if((top+1)%10==0){
             int[] temp=new int[top+1];
@@ -60,9 +64,10 @@ public class ArrayStack {
             for(int i=0;i<=top;i++)
                 arr[i]=temp[i];
         }
+        return removed;
     }
 
-    int peek(){
+    public int peek(){
         if(isEmpty()){
             System.out.println("Stack empty!!!");
             return -1;
@@ -70,7 +75,7 @@ public class ArrayStack {
         return arr[top];
     }
 
-    void displayStack(){
+    public void displayStack(){
         System.out.print("[");
         for(int i=0;i<top;i++)
             System.out.print(arr[i]+" ");

@@ -1,5 +1,7 @@
 package datastructures;
 
+import customexceptions.EmptyStackException;
+
 public class LLStack<T> {
 	private String stackId;
 	private int size;
@@ -29,11 +31,11 @@ public class LLStack<T> {
 		size++;
 	}
 	
-	public T pop() throws StackEmptyException {
+	public T pop() throws EmptyStackException {
 		T popped=null;
 		if(top.getNext()==null) {
 			if(top.getData()==null) 
-				throw new StackEmptyException("The stack is empty!!!");
+				throw new EmptyStackException("The stack is empty!!!");
 			else{
 				popped=top.getData();
 				top.setData(null);
@@ -47,9 +49,9 @@ public class LLStack<T> {
 		return popped;
 	}
 	
-	public void displayStackContents() throws StackEmptyException {
+	public void displayStackContents() throws EmptyStackException {
 		if(top.getData()==null)
-			throw new StackEmptyException("The stack is empty!!!");
+			throw new EmptyStackException("The stack is empty!!!");
 		
 		SinglyNode<T> temp=top;
 		System.out.println();
@@ -65,9 +67,9 @@ public class LLStack<T> {
 		return size;
 	}
 	
-	public T peek() throws StackEmptyException {
+	public T peek() throws EmptyStackException {
 		if(top.getData()==null) {
-			throw new StackEmptyException("The stack is empty!!!");
+			throw new EmptyStackException("The stack is empty!!!");
 		}
 		return top.getData();
 	}

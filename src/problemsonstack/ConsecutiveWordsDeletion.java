@@ -1,11 +1,11 @@
 package problemsonstack;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class ConsecutiveWordsDeletion {
 
-	public static String deleteConsecutiveSameWords(String str) throws StackEmptyException {
+	public static String deleteConsecutiveSameWords(String str) throws EmptyStackException {
 		int len=str.length();
 		String temp="";
 		LLStack<String> stk=new LLStack<>();
@@ -40,7 +40,7 @@ public class ConsecutiveWordsDeletion {
 		result=stk.pop()+result;
 		return result;
 	}
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		String str="tom jerry jerry harry";
 		String res=deleteConsecutiveSameWords(str);
 		System.out.println(str+" "+str.length());

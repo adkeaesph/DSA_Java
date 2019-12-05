@@ -1,5 +1,7 @@
 package datastructures;
 
+import customexceptions.EmptyStackException;
+
 /*
  * queue with expensive dequeue operation
  */
@@ -20,7 +22,7 @@ public class QueueUsingStack1<T> {
 		mainStk.push(data);
 	}
 	
-	public T dequeue() throws StackEmptyException {
+	public T dequeue() throws EmptyStackException {
 		T popped;
 		while(mainStk.getSize()!=0) {
 			auxStk.push(mainStk.pop());
@@ -34,7 +36,7 @@ public class QueueUsingStack1<T> {
 		return popped;
 	}
 	
-	public T peekFront() throws StackEmptyException {
+	public T peekFront() throws EmptyStackException {
 		T front;
 		while(mainStk.getSize()!=0) {
 			auxStk.push(mainStk.pop());
@@ -48,11 +50,11 @@ public class QueueUsingStack1<T> {
 		return front;
 	}
 	
-	public T peekRear() throws StackEmptyException {
+	public T peekRear() throws EmptyStackException {
 		return mainStk.peek();
 	}
 	
-	public void displayQueueContents() throws StackEmptyException {
+	public void displayQueueContents() throws EmptyStackException {
 		while(mainStk.getSize()!=0) {
 			auxStk.push(mainStk.pop());
 		}

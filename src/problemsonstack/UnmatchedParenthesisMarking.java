@@ -1,11 +1,11 @@
 package problemsonstack;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class UnmatchedParenthesisMarking {
 	
-	public static String markUnmatchedParentheses(String str) throws StackEmptyException {//string buffer can be used too
+	public static String markUnmatchedParentheses(String str) throws EmptyStackException {//string buffer can be used too
 		int len=str.length();
 		
 		LLStack<Character> symbolstk =new LLStack<>();
@@ -52,7 +52,7 @@ public class UnmatchedParenthesisMarking {
 		}
 		return res;
 	}
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		//String str="(((abc))((d)))))";
 		//String str="(a))";
 		String str="((a)";

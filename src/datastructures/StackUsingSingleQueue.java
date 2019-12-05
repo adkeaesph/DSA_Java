@@ -3,6 +3,8 @@ package datastructures;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import customexceptions.EmptyStackException;
+
 public class StackUsingSingleQueue<T> {
 	private Queue<T> q;
 	
@@ -23,15 +25,15 @@ public class StackUsingSingleQueue<T> {
 		}
 	}
 	
-	public T pop() throws StackEmptyException{
+	public T pop() throws EmptyStackException{
 		if(q.isEmpty())
-			throw new StackEmptyException("Stack is empty!!!");
+			throw new EmptyStackException("Stack is empty!!!");
 		return q.remove();
 	}
 	
-	public T peek() throws StackEmptyException {
+	public T peek() throws EmptyStackException {
 		if(q.isEmpty())
-			throw new StackEmptyException("Stack is empty!!!");
+			throw new EmptyStackException("Stack is empty!!!");
 		return q.poll();
 	}
 	
@@ -39,9 +41,9 @@ public class StackUsingSingleQueue<T> {
 		return q.size();
 	}
 	
-	public void displayStackContents() throws StackEmptyException {
+	public void displayStackContents() throws EmptyStackException {
 		if(q.isEmpty())
-			throw new StackEmptyException("Stack is empty!!!");
+			throw new EmptyStackException("Stack is empty!!!");
 		
 		System.out.println("Stack contents from top to bottom: ");
 		for(int i=0;i<q.size();i++) {

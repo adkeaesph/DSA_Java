@@ -1,11 +1,11 @@
 package problemsonstack;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class MiddleElementDeletion {
 
-	public static LLStack<Integer> deleteMidElement(LLStack<Integer> stk) throws StackEmptyException {
+	public static LLStack<Integer> deleteMidElement(LLStack<Integer> stk) throws EmptyStackException {
 		if (stk.getSize() <= 1)
 			return new LLStack<Integer>();
 		
@@ -13,7 +13,7 @@ public class MiddleElementDeletion {
 		return coreDeleteMidElement(stk, nth);
 	}
 
-	public static LLStack<Integer> coreDeleteMidElement(LLStack<Integer> stk, int nth) throws StackEmptyException {
+	public static LLStack<Integer> coreDeleteMidElement(LLStack<Integer> stk, int nth) throws EmptyStackException {
 		Integer popped = stk.pop();
 		System.out.println(nth);
 		if(nth!=1) {
@@ -23,7 +23,7 @@ public class MiddleElementDeletion {
 		return stk;
 	}
 
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		LLStack<Integer> stk = new LLStack<>();
 		stk.push(1);
 		stk.push(2);

@@ -1,11 +1,11 @@
 package problemsonstack;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class IndividualWordsReversal {
 
-	public static String reverseIndividualWords(String str) throws StackEmptyException {
+	public static String reverseIndividualWords(String str) throws EmptyStackException {
 		String result="";
 		int len=str.length();
 		LLStack<Character> stack=new LLStack<>();
@@ -28,7 +28,7 @@ public class IndividualWordsReversal {
 		}
 		return result;
 	}
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		String str="I am Ramesh";
 		String res=reverseIndividualWords(str);
 		System.out.println(str);

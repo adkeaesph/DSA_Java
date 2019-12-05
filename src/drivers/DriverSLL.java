@@ -1,6 +1,8 @@
-package datastructures;
+package drivers;
 
 import java.util.Scanner;
+
+import datastructures.SinglyLinkedList;
 public class DriverSLL {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

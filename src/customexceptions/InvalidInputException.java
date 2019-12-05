@@ -1,4 +1,4 @@
-package datastructures;
+package customexceptions;
 
 public class InvalidInputException extends Exception {
 	/**

@@ -1,8 +1,8 @@
 package problemsonstack;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
 import datastructures.SinglyLinkedList;
-import datastructures.StackEmptyException;
 
 /* Problem Statement : Given an array arr[] and a number k. The task is to delete k elements which are 
  * smaller than next element (i.e., we delete arr[i] if arr[i] < arr[i+1]) or become 
@@ -10,7 +10,7 @@ import datastructures.StackEmptyException;
  */
 public class SmallerElementDeletion {
 
-	public static SinglyLinkedList<Integer> deleteSmallerElements(Integer[] arr, int k) throws StackEmptyException {
+	public static SinglyLinkedList<Integer> deleteSmallerElements(Integer[] arr, int k) throws EmptyStackException {
 		int len = arr.length;
 		LLStack<Integer> stk = new LLStack<>();
 		int j = 0;
@@ -34,7 +34,7 @@ public class SmallerElementDeletion {
 		return sll;
 	}
 
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		// Integer[] arr= {3, 100, 1 };
 		// int k=1;
 		// Integer[] arr = {20, 10, 25, 30, 40};

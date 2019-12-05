@@ -2,8 +2,8 @@ package problemsonstack;
 
 import java.util.Scanner;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class InfixToPostfix {
 
@@ -14,7 +14,7 @@ public class InfixToPostfix {
 			return 1;
 		return -1;
 	}
-	private static String convertInfixToPostfix(String infixExpression) throws StackEmptyException {
+	private static String convertInfixToPostfix(String infixExpression) throws EmptyStackException {
 		LLStack<Character> symbolStack=new LLStack<>();
 		String postfixExpression="";
 		int strlen=infixExpression.length();
@@ -46,7 +46,7 @@ public class InfixToPostfix {
 		return postfixExpression;
 	}
 	
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		Scanner sc;
 		int choice;
 		String infixExpression;

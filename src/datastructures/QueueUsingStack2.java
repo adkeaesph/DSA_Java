@@ -1,5 +1,7 @@
 package datastructures;
 
+import customexceptions.EmptyStackException;
+
 public class QueueUsingStack2<T> {
 	private LLStack<T> mainStk;
 	private LLStack<T> auxStk;
@@ -9,7 +11,7 @@ public class QueueUsingStack2<T> {
 		auxStk=new LLStack<>();
 	}
 	
-	public void enqueue(T data) throws StackEmptyException {
+	public void enqueue(T data) throws EmptyStackException {
 		if(mainStk.getSize()!=0) {
 			while(mainStk.getSize()!=0) {
 				auxStk.push(mainStk.pop());
@@ -23,15 +25,15 @@ public class QueueUsingStack2<T> {
 		}
 	}
 	
-	public T dequeue() throws StackEmptyException {
+	public T dequeue() throws EmptyStackException {
 		return mainStk.pop();
 	}
 	
-	public T peekFront() throws StackEmptyException {
+	public T peekFront() throws EmptyStackException {
 		return mainStk.peek();
 	}
 	
-	public T peekRear() throws StackEmptyException {
+	public T peekRear() throws EmptyStackException {
 		while(mainStk.getSize()!=0) {
 			auxStk.push(mainStk.pop());
 		}
@@ -44,7 +46,7 @@ public class QueueUsingStack2<T> {
 		return rear;
 	}
 	
-	public void displayQueueContents() throws StackEmptyException {
+	public void displayQueueContents() throws EmptyStackException {
 		System.out.println("Queue contents from front to rear : ");
 		mainStk.displayStackContents();
 	}

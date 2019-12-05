@@ -1,10 +1,14 @@
-package datastructures;
+package drivers;
 
 import java.util.Scanner;
 
-public class DriverQUS2 {
-	public static void main(String[] args) throws StackEmptyException {
-		QueueUsingStack2<Integer> q = new QueueUsingStack2<Integer>();
+import customexceptions.EmptyStackException;
+import datastructures.QueueUsingStack1;
+
+public class DriverQUS1 {
+
+	public static void main(String[] args) {
+		QueueUsingStack1<Integer> q = new QueueUsingStack1<Integer>();
 		Scanner sc = new Scanner(System.in);
 		int choice;
 		Integer data;
@@ -18,28 +22,28 @@ public class DriverQUS2 {
 			} else if (choice == 2) {
 				try {
 					System.out.println("Element removed = " + q.dequeue());
-				} catch (StackEmptyException e) {
+				} catch (EmptyStackException e) {
 					System.out.println(e.getMessage());
 					continue;
 				}
 			} else if (choice == 3) {
 				try {
 					q.displayQueueContents();
-				} catch (StackEmptyException e) {
+				} catch (EmptyStackException e) {
 					System.out.println(e.getMessage());
 					continue;
 				}
 			} else if (choice == 4) {
 				try {
 					System.out.println("Element at front = " + q.peekFront());
-				} catch (StackEmptyException e) {
+				} catch (EmptyStackException e) {
 					System.out.println(e.getMessage());
 					continue;
 				}
 			} else if (choice == 5) {
 				try {
 					System.out.println("Element at rear = " + q.peekRear());
-				} catch (StackEmptyException e) {
+				} catch (EmptyStackException e) {
 					System.out.println(e.getMessage());
 					continue;
 				}
@@ -48,4 +52,5 @@ public class DriverQUS2 {
 		}
 		sc.close();
 	}
+
 }

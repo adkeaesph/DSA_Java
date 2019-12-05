@@ -1,5 +1,7 @@
 package datastructures;
 
+import customexceptions.EmptyStackException;
+
 public class LLSpecialStack extends LLStack<Integer> {
 	private SinglyNode<Integer> min;
 
@@ -23,7 +25,7 @@ public class LLSpecialStack extends LLStack<Integer> {
 	}
 
 	@Override
-	public Integer pop() throws StackEmptyException {
+	public Integer pop() throws EmptyStackException {
 		Integer toBePopped=null;
 		try {
 			toBePopped=super.pop();
@@ -31,18 +33,18 @@ public class LLSpecialStack extends LLStack<Integer> {
 				if(min.getNext()!=null)
 					min=min.getNext();
 			}
-		} catch(StackEmptyException exception) {
+		} catch(EmptyStackException exception) {
 			min.setData(null);
 			throw exception;
 		} 
 		return toBePopped;
 	}
 	
-	public Integer getMin() throws StackEmptyException {
+	public Integer getMin() throws EmptyStackException {
 		if(this.getSize()!=0)
 			return this.min.getData();
 		else
-			throw new StackEmptyException("The special stack is empty!!!");
+			throw new EmptyStackException("The special stack is empty!!!");
 	}
 	
 	public void displayAuxiliaryStackContents() {
@@ -58,7 +60,7 @@ public class LLSpecialStack extends LLStack<Integer> {
 		}
 	}
 	
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		LLSpecialStack stack=new LLSpecialStack();
 		stack.push(23);
 		stack.push(34);

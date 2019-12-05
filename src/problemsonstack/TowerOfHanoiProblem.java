@@ -2,13 +2,13 @@ package problemsonstack;
 
 import java.util.Scanner;
 
-import datastructures.InvalidInputException;
+import customexceptions.EmptyStackException;
+import customexceptions.InvalidInputException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class TowerOfHanoiProblem {
 	
-	public static void TowerOfHanoi(int noOfDisks, LLStack<Integer> sourceStack, LLStack<Integer> destinationStack,  LLStack<Integer> auxiliaryStack) throws StackEmptyException, InvalidInputException {
+	public static void TowerOfHanoi(int noOfDisks, LLStack<Integer> sourceStack, LLStack<Integer> destinationStack,  LLStack<Integer> auxiliaryStack) throws EmptyStackException, InvalidInputException {
 		if(noOfDisks==1) {
 			destinationStack.push(sourceStack.pop());
 			System.out.println("Disk "+noOfDisks+" moved from "+sourceStack.getStackId()+" to "+destinationStack.getStackId()+".");
@@ -23,7 +23,7 @@ public class TowerOfHanoiProblem {
 		}
 	}
 	
-	public static void main(String[] args) throws StackEmptyException, InvalidInputException {
+	public static void main(String[] args) throws EmptyStackException, InvalidInputException {
 		LLStack<Integer> srcStack=new LLStack<>();
 		srcStack.setStackId("A");
 		LLStack<Integer> auxStack=new LLStack<>();

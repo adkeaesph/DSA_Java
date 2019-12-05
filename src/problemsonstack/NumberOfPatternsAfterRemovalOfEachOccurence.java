@@ -1,10 +1,10 @@
 package problemsonstack;
 
-import datastructures.StackEmptyException;
+import customexceptions.EmptyStackException;
 
 public class NumberOfPatternsAfterRemovalOfEachOccurence {
 
-	public static int calculateNoOfPatterns(String str, String pattern) throws StackEmptyException {
+	public static int calculateNoOfPatterns(String str, String pattern) throws EmptyStackException {
 
 		int patlen = pattern.length();
 		StringBuffer sb = new StringBuffer(str);
@@ -40,7 +40,7 @@ public class NumberOfPatternsAfterRemovalOfEachOccurence {
 		// */
 	}
 
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		//String str = "ABABCC";
 		String str = "ABABCABCC";
 		String pattern = "ABC";

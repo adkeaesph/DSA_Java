@@ -2,11 +2,11 @@ package problemsonstack;
 
 import java.util.Scanner;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class BalancedParenthesisProblem {
-	public static boolean balancedParenthesis(String str) throws StackEmptyException{
+	public static boolean balancedParenthesis(String str) throws EmptyStackException{
         str=str.replace(" ","");
         int len=str.length();
         LLStack<Character> stk=new LLStack<>();
@@ -34,7 +34,7 @@ public class BalancedParenthesisProblem {
         return stk.getSize()==0;
     }
 	
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		Scanner sc=new Scanner(System.in);
         String str=sc.nextLine();
         System.out.println(balancedParenthesis(str));

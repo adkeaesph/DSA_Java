@@ -1,11 +1,11 @@
 package problemsonstack;
 
+import customexceptions.EmptyStackException;
 import datastructures.LLStack;
-import datastructures.StackEmptyException;
 
 public class SortingArrayUsingStack {
 
-	public static Integer[] sortArray(Integer[] arr) throws StackEmptyException {
+	public static Integer[] sortArray(Integer[] arr) throws EmptyStackException {
 		LLStack<Integer> sortedStk = new LLStack<Integer>();
 		LLStack<Integer> auxStk = new LLStack<Integer>();
 
@@ -37,7 +37,7 @@ public class SortingArrayUsingStack {
 		return arr;
 	}
 
-	public static void main(String[] args) throws StackEmptyException {
+	public static void main(String[] args) throws EmptyStackException {
 		Integer[] arr = { 2, 4, 1, 3, 7, 2, 9, 3 };
 		arr=sortArray(arr);
 		

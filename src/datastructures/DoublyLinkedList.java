@@ -2,7 +2,7 @@ package datastructures;
 
 public class DoublyLinkedList {
 
-    class Node{
+    public class Node{
         int data;
         Node prev;
         Node next;
@@ -14,11 +14,11 @@ public class DoublyLinkedList {
         }
     }
 
-    Node createList(){
+    public Node createList(){
         return null;
     }
 
-    int size(Node head){
+    public int size(Node head){
         int length=0;
         if(head==null)
             return length;
@@ -31,7 +31,7 @@ public class DoublyLinkedList {
         return length;
     }
 
-    Node insertAtStart(Node head, int data){
+    public Node insertAtStart(Node head, int data){
         Node node=new Node(data);
         if(head==null)
             return node;
@@ -42,7 +42,7 @@ public class DoublyLinkedList {
         return head;
     }
 
-    Node insertAtEnd(Node head, int data){
+    public Node insertAtEnd(Node head, int data){
         Node node=new Node(data);
         if(head==null)
             return node;
@@ -58,7 +58,7 @@ public class DoublyLinkedList {
         return head;
     }
 
-    Node insertAtPosition(Node head, int position, int data){
+    public Node insertAtPosition(Node head, int position, int data){
         int lcount=size(head);
 
         if(position>lcount || position<0){
@@ -87,7 +87,7 @@ public class DoublyLinkedList {
         return head;
     }
 
-    int findPosition(Node head, int data){
+    public int findPosition(Node head, int data){
         if(head==null)
             return -2;
 
@@ -103,7 +103,7 @@ public class DoublyLinkedList {
         return -1;
     }
 
-    Node deleteFirst(Node head){
+    public Node deleteFirst(Node head){
         if(head==null) {
             System.out.println("List is empty!!! No deletion happened.");
             return null;
@@ -114,7 +114,7 @@ public class DoublyLinkedList {
         return head;
     }
 
-    Node deleteLast(Node head){
+    public Node deleteLast(Node head){
         if(head==null) {
             System.out.println("List is empty!!! No deletion happened.");
             return null;
@@ -127,7 +127,7 @@ public class DoublyLinkedList {
         return head;
     }
 
-    Node deleteAt(Node head, int position){
+    public Node deleteAt(Node head, int position){
         if(head==null){
             System.out.println("List is empty!!! No deletion happened.");
             return null;
@@ -158,7 +158,7 @@ public class DoublyLinkedList {
         return head;
     }
 
-    Node delete(Node head,int data){
+    public Node delete(Node head,int data){
         int pos=findPosition(head,data);
         if(pos==-2){
             System.out.println("List is empty!!! Element not found.");
@@ -170,7 +170,7 @@ public class DoublyLinkedList {
         return deleteAt(head,pos);
     }
 
-    Node deleteAll(Node head,int data){
+    public Node deleteAll(Node head,int data){
         int pos=findPosition(head,data);
         boolean flag=false;
         while(pos>=0){
@@ -189,7 +189,7 @@ public class DoublyLinkedList {
         return head;
     }
 
-    Node reverse(Node head){
+    public Node reverse(Node head){
         if(head==null || head.next==null)
             return head;
 
@@ -208,7 +208,7 @@ public class DoublyLinkedList {
         return prev;
     }
 
-    void displayList(Node head){
+    public void displayList(Node head){
         System.out.print("[");
         if(head==null) {
             System.out.print("]");
@@ -230,7 +230,7 @@ public class DoublyLinkedList {
         System.out.println();
     }
 
-    void reverseDisplayList(Node head){
+    public void reverseDisplayList(Node head){
         System.out.print("[");
         if(head==null) {
             System.out.print("]");

@@ -1,6 +1,8 @@
-package datastructures;
+package drivers;
 
 import java.util.Scanner;
+
+import datastructures.StackUsingSingleQueue;
 
 public class DriverSUSQ {
 	public static void main(String[] args) {

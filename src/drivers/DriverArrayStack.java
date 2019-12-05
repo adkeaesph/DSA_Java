@@ -1,8 +1,11 @@
-package datastructures;
+package drivers;
+
+import customexceptions.EmptyStackException;
+import datastructures.ArrayStack;
 
 public class DriverArrayStack {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws EmptyStackException {
 		ArrayStack stk = new ArrayStack();
 		stk.push(12);
 		stk.push(23);
