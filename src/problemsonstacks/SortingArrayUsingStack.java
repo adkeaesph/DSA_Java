@@ -1,7 +1,7 @@
 package problemsonstacks;
 
 import customexceptions.EmptyStackException;
-import datastructures.StackUsingLL;
+import stacks.StackUsingLL;
 
 public class SortingArrayUsingStack {
 

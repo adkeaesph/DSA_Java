@@ -1,8 +1,8 @@
 package problemsonstacks;
 
 import customexceptions.EmptyStackException;
-import datastructures.StackUsingLL;
-import datastructures.SinglyLinkedList;
+import lists.SinglyLinkedList;
+import stacks.StackUsingLL;
 
 /* Problem Statement : Given an array arr[] and a number k. The task is to delete k elements which are 
  * smaller than next element (i.e., we delete arr[i] if arr[i] < arr[i+1]) or become 

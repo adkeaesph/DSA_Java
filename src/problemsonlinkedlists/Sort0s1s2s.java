@@ -1,7 +1,7 @@
 package problemsonlinkedlists;
 
-import datastructures.SinglyLinkedList;
-import datastructures.SinglyNode;
+import lists.SinglyLinkedList;
+import lists.SinglyNode;
 
 public class Sort0s1s2s {
 

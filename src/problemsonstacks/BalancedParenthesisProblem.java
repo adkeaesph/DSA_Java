@@ -3,7 +3,7 @@ package problemsonstacks;
 import java.util.Scanner;
 
 import customexceptions.EmptyStackException;
-import datastructures.StackUsingLL;
+import stacks.StackUsingLL;
 
 public class BalancedParenthesisProblem {
 	public static boolean balancedParenthesis(String str) throws EmptyStackException{

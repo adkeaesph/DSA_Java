@@ -1,7 +1,7 @@
 package problemsonlinkedlists;
 
-import datastructures.SinglyLinkedList;
-import datastructures.SinglyNode;
+import lists.SinglyLinkedList;
+import lists.SinglyNode;
 
 public class PalindromeProblem {
 	public static <T> boolean isPalindrome(SinglyNode<T> head) {

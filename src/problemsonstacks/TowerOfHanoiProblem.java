@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import customexceptions.EmptyStackException;
 import customexceptions.InvalidInputException;
-import datastructures.StackUsingLL;
+import stacks.StackUsingLL;
 
 public class TowerOfHanoiProblem {
 	

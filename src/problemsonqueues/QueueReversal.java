@@ -2,8 +2,8 @@ package problemsonqueues;
 
 import customexceptions.EmptyQueueException;
 import customexceptions.EmptyStackException;
-import datastructures.QueueUsingLL;
-import datastructures.StackUsingLL;
+import queues.QueueUsingLL;
+import stacks.StackUsingLL;
 
 public class QueueReversal {
 

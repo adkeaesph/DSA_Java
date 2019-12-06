@@ -1,7 +1,7 @@
 package problemsonqueues;
 
 import customexceptions.EmptyQueueException;
-import datastructures.QueueUsingLL;
+import queues.QueueUsingLL;
 
 public class QueueSorting {
 
