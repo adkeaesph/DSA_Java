@@ -84,8 +84,15 @@ public class DriverSLL {
             }else if(choice==20) {
                 sll.reverseAlternateNodes();
                 sll.displayList();
-            }
-            else{
+            }else if(choice==21) {
+            	SinglyNode<Character> node=sll.getHead().getNext().getNext();
+            	SinglyLinkedList<Character> demoll=new SinglyLinkedList<Character>();
+            	demoll.setHead(node);
+            	demoll.displayList();
+            	
+            	sll.deleteNode(node);
+            	sll.displayList();
+            }else{
                 System.out.println("Invalid choice!!! Try again!!!");
             }
         }
