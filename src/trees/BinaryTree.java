@@ -1,5 +1,8 @@
 package trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import customexceptions.EmptyStackException;
 import lists.SinglyLinkedList;
 import lists.SinglyNode;
@@ -118,14 +121,15 @@ public class BinaryTree<T> {
 		if (list.getHead() != null) {
 			SinglyNode<T> temp = list.getHead();
 			int limit=1;
-			int i=1;
+			int i=1,j=1;
 			while (temp != null) {
 				if(i<=limit) {
 					System.out.print(temp.getData() + " ");
 				}else {
 					System.out.println();
 					System.out.print(temp.getData() + " ");
-					limit+=limit*2;
+					limit+=j*2;
+					j++;
 				}
 				temp = temp.getNext();
 				i++;
@@ -133,14 +137,33 @@ public class BinaryTree<T> {
 		} 
 	}
 	
-	public void reverseLevelOrderTraversal() throws EmptyStackException {
+	public void levelOrderTraversalUsingQueue() {
+		Queue<BinaryTreeNode<T>> q=new LinkedList<>();
+		q.add(root);
+		BinaryTreeNode<T> temp;
+		
+		while(!q.isEmpty()) {
+			temp=q.peek();
+			System.out.print(temp.getData()+" ");
+			q.remove();
+			
+			if(temp.getLeft()!=null) 
+				q.add(temp.getLeft());
+	
+			if(temp.getRight()!=null) 
+				q.add(temp.getRight());
+			
+		}
+	}
+	
+	public void reverseLevelOrderTraversalWithLevelsDisplayedSeparately() throws EmptyStackException {
 		SinglyLinkedList<T> list = convertTreeToList();
 		SinglyLinkedList<T> tempList=new SinglyLinkedList<>();
 		StackUsingLL<SinglyLinkedList<T>> stkOfLists=new StackUsingLL<>();
 		if (list.getHead() != null) {
 			SinglyNode<T> temp = list.getHead();
 			int limit=1;
-			int i=1;
+			int i=1,j=1;
 			while (temp != null) {
 				if(i<=limit) {
 					tempList.insertAtEnd(temp.getData());
@@ -148,7 +171,8 @@ public class BinaryTree<T> {
 					stkOfLists.push(tempList);
 					tempList=new SinglyLinkedList<>();
 					tempList.insertAtEnd(temp.getData());
-					limit+=limit*2;
+					limit+=j*2;
+					j++;
 				}
 				temp = temp.getNext();
 				i++;
@@ -160,5 +184,29 @@ public class BinaryTree<T> {
 			tempList=stkOfLists.pop();
 			tempList.displayList();
 		}
+	}
+	
+	public int findHeightOfTree() {
+	
+		if(root==null)
+			return -1;
+		
+		int leftHeight=-1;
+		if(root.getLeft()!=null) {
+			BinaryTree<T> leftTree=new BinaryTree<>();
+			leftTree.setRoot(root.getLeft());
+			leftHeight=leftTree.findHeightOfTree();
+		}
+		
+		int rightHeight=-1;
+		if(root.getRight()!=null) {
+			BinaryTree<T> rightTree=new BinaryTree<>();
+			rightTree.setRoot(root.getRight());
+			rightHeight=rightTree.findHeightOfTree();
+		}
+		
+		if (leftHeight > rightHeight)  
+            return(leftHeight + 1);  
+        else return(rightHeight + 1);
 	}
 }

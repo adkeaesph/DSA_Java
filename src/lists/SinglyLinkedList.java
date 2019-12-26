@@ -179,6 +179,17 @@ public class SinglyLinkedList<T> {
 		node=next;
 		System.out.println(node.getData());
 	}
+	
+	public void deleteAlt() {
+		if(head.getNext()==null)
+            return;
+        
+        SinglyNode<T> temp=head;
+        while(temp!=null && temp.getNext()!=null){
+            temp.setNext(temp.getNext().getNext());
+            temp=temp.getNext();
+        }
+	}
 
 	public void reverse() {
 		SinglyNode<T> prev = null;

@@ -92,6 +92,9 @@ public class DriverSLL {
             	
             	sll.deleteNode(node);
             	sll.displayList();
+            }else if(choice==22) {
+            	sll.deleteAlt();
+            	sll.displayList();
             }else{
                 System.out.println("Invalid choice!!! Try again!!!");
             }

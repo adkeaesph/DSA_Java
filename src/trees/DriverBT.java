@@ -15,23 +15,31 @@ public class DriverBT {
 		rootLeft.setRight(new BinaryTreeNode<>(16));
 		rootRight.setLeft(new BinaryTreeNode<>(24));
 		rootRight.setRight(new BinaryTreeNode<>(60));
+		BinaryTreeNode<Integer> rootRightLeft = rootRight.getLeft();
+		rootRightLeft.setLeft(new BinaryTreeNode<>(22));
 		//*/ 
 		bt.inOrderTraversal();
 
-		System.out.println();
+		System.out.println("\n");
 		bt.preOrderTraversal();
 
-		System.out.println();
+		System.out.println("\n");
 		bt.postOrderTraversal();
 
-		System.out.println();
+		System.out.println("\n");
 		bt.levelOrderTraversal();
 		
-		System.out.println();
+		System.out.println("\n");
+		bt.levelOrderTraversalUsingQueue();
+		
+		System.out.println("\n");
 		bt.levelOrderTraversalWithLevelsDisplayedSeparately();
 		
-		System.out.println();
-		bt.reverseLevelOrderTraversal();
+		System.out.println("\n");
+		bt.reverseLevelOrderTraversalWithLevelsDisplayedSeparately();
+		
+		System.out.println("\n");
+		System.out.println("Height = "+bt.findHeightOfTree());
 	}
 
 }
