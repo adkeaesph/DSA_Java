@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ActivitySelectionProblem {
 
-	public static List sortByEndTimes(List<Activity> activities){
+	public static List<Activity> sortByEndTimes(List<Activity> activities){
 		Collections.sort(activities, new Comparator<Activity>() {
 			@Override
 			public int compare(Activity a1, Activity a2) {
