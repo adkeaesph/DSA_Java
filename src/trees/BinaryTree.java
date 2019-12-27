@@ -207,6 +207,7 @@ public class BinaryTree<T> {
 		
 		if (leftHeight > rightHeight)  
             return(leftHeight + 1);  
-        else return(rightHeight + 1);
+        else 
+        	return(rightHeight + 1);
 	}
 }
