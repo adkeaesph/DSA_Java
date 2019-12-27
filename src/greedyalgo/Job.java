@@ -31,11 +31,18 @@ public class Job implements Comparable<Job>{
 
 	@Override
 	public int compareTo(Job other) {
-		if(this.profit<other.getProfit())
+		if(this.deadline<other.getDeadline())
 			return 1;
-		else if(this.profit>other.getProfit())
+		else if(this.deadline>other.getDeadline())
 			return -1;
-		else
-			return 0;
+		else {
+			if(this.profit<other.getProfit())
+				return 1;
+			else if(this.profit>other.getProfit())
+				return -1;
+			else
+				return 0;
+		}
+			
 	}
 }
