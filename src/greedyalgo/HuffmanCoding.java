@@ -44,20 +44,17 @@ public class HuffmanCoding {
 		}
 
 		Set<HuffmanNode> nodeSet = new TreeSet<>();
-		Iterator<Map.Entry<String, Integer>> it = hmap.entrySet().iterator();
-		while (it.hasNext()) {
-			Map.Entry<String, Integer> item = it.next();
+		for (Map.Entry<String, Integer> item : hmap.entrySet()) {
 			nodeSet.add(new HuffmanNode(item.getKey(), item.getValue()));
 		}
 
-		Iterator<HuffmanNode> jt = nodeSet.iterator();
-		while (jt.hasNext()) {
-			System.out.println(jt.next());
+		for (HuffmanNode huffmanNode : nodeSet) {
+			System.out.println(huffmanNode);
 		}
 
 		HuffmanNode a, b, newNode = null;
 		while (nodeSet.size() != 1) {
-			jt = nodeSet.iterator();
+			Iterator<HuffmanNode> jt = nodeSet.iterator();
 			a = jt.next();
 			b = jt.next();
 			nodeSet.remove(a);
