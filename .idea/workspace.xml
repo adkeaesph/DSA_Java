@@ -2,68 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab1ea0ff-d18b-439b-b5d2-5569e1e0fe6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/greedyalgo/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/customexceptions/EmptyQueueException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/customexceptions/EmptyQueueException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/customexceptions/EmptyStackException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/customexceptions/EmptyStackException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/customexceptions/InvalidInputException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/customexceptions/InvalidInputException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/greedyalgo/ActivitySelectionProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/greedyalgo/ActivitySelectionProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lists/DoublyLinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lists/DoublyLinkedList$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lists/DoublyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lists/DoublyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lists/DriverDLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lists/DriverDLL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lists/DriverSLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lists/DriverSLL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lists/SinglyLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lists/SinglyLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/lists/SinglyNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/lists/SinglyNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonlinkedlists/DuplicatesRemoval.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonlinkedlists/DuplicatesRemoval.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonlinkedlists/PalindromeProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonlinkedlists/PalindromeProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonlinkedlists/Sort0s1s2s.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonlinkedlists/Sort0s1s2s.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonlinkedlists/StringComparison.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonlinkedlists/StringComparison.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonqueues/InterleafQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonqueues/InterleafQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonqueues/QueueReversal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonqueues/QueueReversal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonqueues/QueueSorting.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonqueues/QueueSorting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/BalancedParenthesisProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/BalancedParenthesisProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/ConsecutiveWordsDeletion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/ConsecutiveWordsDeletion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/IndividualWordsReversal.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/IndividualWordsReversal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/InfixToPostfix.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/InfixToPostfix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/MiddleElementDeletion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/MiddleElementDeletion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/NextGreaterElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/NextGreaterElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/NumberOfPatternsAfterRemovalOfEachOccurence.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/NumberOfPatternsAfterRemovalOfEachOccurence.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/PostfixEvauation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/PostfixEvauation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/PostfixPrefix.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/PostfixPrefix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/SmallerElementDeletion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/SmallerElementDeletion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/SortingArrayUsingStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/SortingArrayUsingStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/StackReversalUsingRecursion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/StackReversalUsingRecursion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/StringDecoding.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/StringDecoding.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/TowerOfHanoiProblem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/TowerOfHanoiProblem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/TwoStacksInOneArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/TwoStacksInOneArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstacks/UnmatchedParenthesisMarking.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstacks/UnmatchedParenthesisMarking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/problemsonstrings/StringPermutations.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/problemsonstrings/StringPermutations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/queues/DriverQULL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/queues/DriverQULL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/queues/DriverQUS1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/queues/DriverQUS1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/queues/DriverQUS2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/queues/DriverQUS2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/queues/QueueUsingLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/queues/QueueUsingLL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/queues/QueueUsingStk1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/queues/QueueUsingStk1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/queues/QueueUsingStk2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/queues/QueueUsingStk2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/stacks/DriverSUA.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/stacks/DriverSUA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/stacks/DriverSULL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/stacks/DriverSULL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/stacks/DriverSUSQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/stacks/DriverSUSQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/stacks/StackSpclUsingLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/stacks/StackSpclUsingLL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/stacks/StackUsingArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/stacks/StackUsingArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/stacks/StackUsingLL.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/stacks/StackUsingLL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/stacks/StackUsingSingleQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/stacks/StackUsingSingleQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/BinaryTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/BinaryTreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/BinaryTreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/ChildrenSumProperty.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/ChildrenSumProperty.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/DriverBT.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/DriverBT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/DriverTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/DriverTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/MirrorTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/MirrorTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/trees/TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/trees/TreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/greedyalgo/ActivitySelectionProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/greedyalgo/ActivitySelectionProblem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/classes/" />
-    <ignored path="$PROJECT_DIR$/bin/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,45 +11,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/problemsonstacks/TwoStacksInOneArray.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/greedyalgo/ActivitySelectionProblem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/greedyalgo/Activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-              <folding>
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#343#344#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
-                <element signature="e#385#386#0" expanded="true" />
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -126,75 +27,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/DSA.iml" />
-        <option value="$PROJECT_DIR$/src/problemsonstacks/ParenthesisRemovalForPlusMinusOperations.java" />
-        <option value="$PROJECT_DIR$/src/problemsonstacks/ConsecutiveWordsDeletion.java" />
-        <option value="$PROJECT_DIR$/src/greedyalgo/ActivitySelectionProblem.java" />
-        <option value="$PROJECT_DIR$/src/greedyalgo/Activity.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenRunner">
     <option name="jreName" value="12" />
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/DSA.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/DSA.iml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="26" />
-    <option name="y" value="42" />
-    <option name="width" value="1532" />
-    <option name="height" value="980" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="DSA" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="DSA" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane" />
-    </panes>
+  <component name="ProjectId" id="1VbJxeEKH8JQmSz4KyQpPhoBy1a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="customexceptions" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.ActivitySelectionProblem">
+  <component name="RunManager" selected="Application.HuffmanCoding">
     <configuration name="ActivitySelectionProblem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="greedyalgo.ActivitySelectionProblem" />
       <module name="DSA" />
@@ -208,12 +61,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BalancedParenthesisProblem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="problemsonstacks.BalancedParenthesisProblem" />
+    <configuration name="DriverTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="trees.DriverTree" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="problemsonstacks.*" />
+          <option name="PATTERN" value="trees.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -221,12 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DriverTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="trees.DriverTree" />
+    <configuration name="HuffmanCoding" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="greedyalgo.HuffmanCoding" />
       <module name="DSA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="trees.*" />
+          <option name="PATTERN" value="greedyalgo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -262,13 +115,25 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HuffmanCoding" />
         <item itemvalue="Application.ActivitySelectionProblem" />
         <item itemvalue="Application.TwoStacksInOneArray" />
         <item itemvalue="Application.DriverTree" />
         <item itemvalue="Application.IndividualWordsReversal" />
-        <item itemvalue="Application.BalancedParenthesisProblem" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -283,151 +148,31 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="21" y="34" width="1225" height="784" extended-state="0" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3082251" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5776" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.28650904" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/problemsonstacks/BalancedParenthesisProblem.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#1887#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problemsonstacks/BalancedParenthesisProblem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problemsonstacks/InfixToPostfix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problemsonstacks/IndividualWordsReversal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/trees/DriverTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lists/SinglyLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9100">
-          <caret line="365" column="9" selection-start-line="365" selection-start-column="9" selection-end-line="365" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problemsonlinkedlists/Sort0s1s2s.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problemsonstacks/ConsecutiveWordsDeletion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problemsonstacks/ParenthesisRemovalForPlusMinusOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#137#138#0" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/problemsonstacks/TwoStacksInOneArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="131" column="26" selection-start-line="131" selection-start-column="26" selection-end-line="131" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/greedyalgo/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DSA.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="1" lean-forward="true" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/greedyalgo/ActivitySelectionProblem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="498" y="129" key="FileChooserDialogImpl" timestamp="1577516630838">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="498" y="129" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1577516630838" />
+    <state width="1330" height="313" key="GridCell.Tab.0.bottom" timestamp="1577516716976">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1330" height="313" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1577516716976" />
+    <state width="1330" height="313" key="GridCell.Tab.0.center" timestamp="1577516716975">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1330" height="313" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1577516716975" />
+    <state width="1330" height="313" key="GridCell.Tab.0.left" timestamp="1577516716975">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1330" height="313" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1577516716975" />
+    <state width="1330" height="313" key="GridCell.Tab.0.right" timestamp="1577516716976">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1330" height="313" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1577516716976" />
+    <state x="146" y="0" key="SettingsEditor" timestamp="1577516774324">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="146" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1577516774324" />
   </component>
   <component name="masterDetails">
     <states>
