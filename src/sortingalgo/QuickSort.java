@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class QuickSort {
 
 	public static int partition(int[] arr, int start, int end) {
-		if(start<end) {
+		//if(start<end) {
 			int n=end-start+1;
 			int[] arr1=new int[n];
 			int pivot=arr[end];
@@ -35,15 +35,15 @@ public class QuickSort {
 			}
 			
 			return pivotIndex;
-		}
-		return -1;
+		//}
+		//return -1;
 	}
 	
 	public static void actualQuickSort(int[] arr,int start,int end,int len) {
-		int pivotIndex=partition(arr, start, end);
-		if(pivotIndex!=-1) {
+		if(start<end) {
+			int pivotIndex=partition(arr, start, end);
 			actualQuickSort(arr, start, pivotIndex-1,len);
-			actualQuickSort(arr, pivotIndex+1,end,len);
+			actualQuickSort(arr, pivotIndex+1,end,len);	
 		}
 	}
 	
