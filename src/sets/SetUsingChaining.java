@@ -7,6 +7,7 @@ public class SetUsingChaining<T> implements Set<T>{
 	private SetCell<T>[] arr;
 	private static final int CAPACITY=5;
 	
+	@SuppressWarnings("unchecked")
 	public SetUsingChaining() {
 		arr=new SetCell[CAPACITY];
 		for(int i=0;i<CAPACITY;i++) {
@@ -16,7 +17,6 @@ public class SetUsingChaining<T> implements Set<T>{
 	
 	@Override
 	public boolean contains(T object) {
-		// TODO Auto-generated method stub
 		int index=(object.hashCode() & 0x7FFFFFFF)%CAPACITY;
 		List<T> list=arr[index].getList();
 		int size=arr[index].getSize();
@@ -69,6 +69,7 @@ public class SetUsingChaining<T> implements Set<T>{
 		return list;
 	}
 	
+	@Override
 	public void display() {
 		List<T> list=toList();
 		int len=list.size();
