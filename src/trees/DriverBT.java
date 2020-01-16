@@ -1,5 +1,7 @@
 package trees;
 
+import java.util.List;
+
 import customexceptions.EmptyStackException;
 
 public class DriverBT {
@@ -37,6 +39,12 @@ public class DriverBT {
 		
 		System.out.println("\n");
 		bt.reverseLevelOrderTraversalWithLevelsDisplayedSeparately();
+		
+		System.out.println("\n");
+		System.out.println("The list:");
+		List<Integer> list=bt.treeToList();
+		for(Integer num:list)
+			System.out.print(num+" ");
 		
 		System.out.println("\n");
 		System.out.println("Height = "+bt.findHeightOfTree());

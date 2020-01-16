@@ -1,6 +1,8 @@
 package trees;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import customexceptions.EmptyStackException;
@@ -153,8 +155,26 @@ public class BinaryTree<T> {
 	
 			if(temp.getRight()!=null) 
 				q.add(temp.getRight());
-			
 		}
+	}
+	
+	public List<T> treeToList() {
+		Queue<BinaryTreeNode<T>> q=new LinkedList<>();
+		q.add(root);
+		BinaryTreeNode<T> temp;
+		List<T> res=new ArrayList<>();
+		while(!q.isEmpty()) {
+			temp=q.peek();
+			res.add(temp.getData());
+			q.remove();
+			
+			if(temp.getLeft()!=null) 
+				q.add(temp.getLeft());
+	
+			if(temp.getRight()!=null) 
+				q.add(temp.getRight());
+		}
+		return res;
 	}
 	
 	public void reverseLevelOrderTraversalWithLevelsDisplayedSeparately() throws EmptyStackException {
