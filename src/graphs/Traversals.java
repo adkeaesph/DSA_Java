@@ -3,7 +3,7 @@ package graphs;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BFSTraversal extends EasyGraph {
+public class Traversals extends EasyGraph {
 	
 	//not for disconnected graph
 	public static List<Integer> bfsTraversal(List<Integer>[] grph, int nodes,int startNode) {
