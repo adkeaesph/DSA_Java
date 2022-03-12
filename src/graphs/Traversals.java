@@ -55,6 +55,7 @@ public class Traversals extends EasyGraph {
 		
 		return q;
 	}
+	
 	public static void main(String[] args) {
 		int nodes = 6;
 		List<Integer>[] grph = createGraph(nodes);

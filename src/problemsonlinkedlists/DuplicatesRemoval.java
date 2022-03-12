@@ -61,60 +61,60 @@ public class DuplicatesRemoval {
 
 	public static void main(String[] args) {
 		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
-		sll.insertAtEnd(1);
-		sll.insertAtEnd(1);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(5);
-		sll.insertAtEnd(6);
-		sll.insertAtEnd(6);
-		sll.insertAtEnd(8);
+		sll.add(1);
+		sll.add(1);
+		sll.add(2);
+		sll.add(2);
+		sll.add(2);
+		sll.add(5);
+		sll.add(6);
+		sll.add(6);
+		sll.add(8);
 		// sll.insertAtEnd(8);
 		// sll.insertAtEnd(8);
 		// sll.insertAtEnd(8);
-		sll.displayList();
+		System.out.println(sll);
 
 		removeDuplicatesFromSortedList(sll);
-		sll.displayList();
+		System.out.println(sll);
 
 		sll = new SinglyLinkedList<Integer>();
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(3);
-		sll.insertAtEnd(4);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(4);
-		sll.insertAtEnd(9);
-		sll.insertAtEnd(0);
-		sll.insertAtEnd(7);
-		sll.insertAtEnd(7);
-		sll.insertAtEnd(3);
-		sll.insertAtEnd(1);
-		sll.insertAtEnd(9);
-		sll.displayList();
+		sll.add(2);
+		sll.add(2);
+		sll.add(3);
+		sll.add(4);
+		sll.add(2);
+		sll.add(4);
+		sll.add(9);
+		sll.add(0);
+		sll.add(7);
+		sll.add(7);
+		sll.add(3);
+		sll.add(1);
+		sll.add(9);
+		System.out.println(sll);
 
 		removeDuplicatesFromUnsortedListBruteForce(sll);
-		sll.displayList();
+		System.out.println(sll);
 
 		sll = new SinglyLinkedList<Integer>();
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(3);
-		sll.insertAtEnd(4);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(4);
-		sll.insertAtEnd(9);
-		sll.insertAtEnd(0);
-		sll.insertAtEnd(7);
-		sll.insertAtEnd(7);
-		sll.insertAtEnd(3);
-		sll.insertAtEnd(1);
-		sll.insertAtEnd(9);
-		sll.displayList();
+		sll.add(2);
+		sll.add(2);
+		sll.add(3);
+		sll.add(4);
+		sll.add(2);
+		sll.add(4);
+		sll.add(9);
+		sll.add(0);
+		sll.add(7);
+		sll.add(7);
+		sll.add(3);
+		sll.add(1);
+		sll.add(9);
+		System.out.println(sll);
 
 		removeDuplicatesFromUnsortedListOptimised(sll);
-		sll.displayList();
+		System.out.println(sll);
 	}
 
 }

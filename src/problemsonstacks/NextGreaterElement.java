@@ -31,31 +31,6 @@ public class NextGreaterElement {
 		arr[len-1]=-1;
 	}
 
-	public static void findNextGreaterElementForEachArrayElement2(Integer[] arr) {
-		int len = arr.length;
-
-		Stack<Integer> stk;
-		stk = new Stack<>();
-		for (int j = len - 1; j >=0; j--)
-			stk.push(arr[j]);
-
-
-		Stack<Integer> tmp=new Stack<Integer>();
-		boolean greaterFound;
-		for (int i = 0; i < len - 1; i++) {		
-			greaterFound = false;
-			if(stk.isEmpty())
-				arr[i]=-1;
-			else {
-				if(stk.peek()>arr[i])
-					arr[i]=stk.peek();
-				else {
-					
-				}
-			}
-		}
-	}
-
 	
 	public static void main(String[] args) {
 		Integer[] arr = { 5, 1, 9, 2, 5, 1, 7 };

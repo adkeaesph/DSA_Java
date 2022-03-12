@@ -41,18 +41,18 @@ public class StringComparison {
 
 	public static void main(String[] args) {
 		SinglyLinkedList<Character> s1 = new SinglyLinkedList<Character>();
-		s1.insertAtEnd('a');
-		// s1.insertAtEnd('b');
-		// s1.insertAtEnd('f');
-		// s1.insertAtEnd('a');
-		s1.displayList();
+		s1.add('a');
+		// s1.add('b');
+		// s1.add('f');
+		// s1.add('a');
+		System.out.println(s1);
 
 		SinglyLinkedList<Character> s2 = new SinglyLinkedList<Character>();
-		s2.insertAtEnd('v');
-		// s2.insertAtEnd('b');
-		// s2.insertAtEnd('c');
-		// s2.insertAtEnd('b');
-		s2.displayList();
+		s2.add('v');
+		// s2.add('b');
+		// s2.add('c');
+		// s2.add('b');
+		System.out.println(s2);
 
 		System.out.println(compare(s1, s2));
 

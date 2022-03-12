@@ -2,208 +2,225 @@ package lists;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
-public class SinglyLinkedList<T> {
+import customexceptions.ListException;
+public class SinglyLinkedList<T> implements List<T> {
+
 	private SinglyNode<T> head;
-	private static int size;
-
-	public SinglyLinkedList() {
-		head = null;
-		size = 0;
-	}
-
-	public int getSize() {
-		return size;
-	}
+	private SinglyNode<T> tail;
+	private int size;
 
 	public SinglyNode<T> getHead() {
 		return head;
 	}
-
+	
 	public void setHead(SinglyNode<T> head) {
 		this.head = head;
 	}
 
-	public void insertAtStart(T data) {
-		SinglyNode<T> node = new SinglyNode<>(data);
-		if (head != null) {
-			node.setNext(head);
-		}
-		setHead(node);
-		size++;
+	public SinglyNode<T> getTail() {
+		return tail;
+	}
+	
+	public SinglyLinkedList() {
+		head = null;
+		tail = head;
+		size = 0;
 	}
 
-	public void insertAtEnd(T data) {
-		SinglyNode<T> node = new SinglyNode<>(data);
-		if (head == null) {
-			head = node;
-			size++;
-			return;
-		}
-		SinglyNode<T> last = head;
-		while (last.getNext() != null)
-			last = last.getNext();
-
-		last.setNext(node);
-		size++;
-	}
-
-	public void insertAtPosition(int position, T data) {
-		int length = getSize();
-
-		if (position > length || position < 0) {
-			System.out.println("Invalid Position");
-			return;
-		}
-		if (position == 0) {
-			insertAtStart(data);
-		} else if (position == length) {
-			insertAtEnd(data);
+	@Override
+	public void add(T data) {
+		if (size == 0) {
+			head = new SinglyNode<>(data);
+			tail = head;
 		} else {
-			length = 0;
-			SinglyNode<T> temp = head;
-			SinglyNode<T> node = new SinglyNode<>(data);
-			while (temp != null) {
-				length++;
-				if (length == position) {
-					node.setNext(temp.getNext());
-					temp.setNext(node);
+			SinglyNode<T> newNode = new SinglyNode<>(data);
+			tail.setNext(newNode);
+			tail = tail.getNext();
+		}
+		size++;
+	}
+
+	@Override
+	public void add(T data, int position) throws ListException {
+		if (position < 0 || position > getSize())
+			throw new ListException("Position can be 0 to n where n is the size of the list");
+
+		if (position == 0) {
+			if (getSize() == 0)
+				add(data);
+			else {
+				SinglyNode<T> newNode = new SinglyNode<>(data, head);
+				head = newNode;
+				size++;
+			}
+		} else if (position == getSize())
+			add(data);
+		else {
+			SinglyNode<T> newNode = new SinglyNode<>(data);
+			SinglyNode<T> currentNode = head;
+			int index = 0;
+			while (currentNode != null) {
+				if (index == position - 1) {
+					newNode.setNext(currentNode.getNext());
+					currentNode.setNext(newNode);
+					size++;
 					break;
 				}
-				temp = temp.getNext();
+				currentNode = currentNode.getNext();
+				index++;
 			}
-			size++;
 		}
 	}
 
-	public int findPosition(T data) {
-		if (head == null)
-			return -2;
+	@Override
+	public void removeObject(T data) throws ListException {
+		if (isEmpty())
+			throw new ListException("List is empty.");
 
-		SinglyNode<T> temp = head;
-		int len = 0;
-		while (temp != null) {
-			if (temp.getData() == data) {
-				return len;
+		if (head.getData().equals(data)) {
+			if (size == 1) {
+				head = null;
+				tail = head;
+			} else
+				head = head.getNext();
+			size--;
+		} else {
+			SinglyNode<T> currentNode = head;
+			while (currentNode != null && currentNode.getNext() != null) {
+				SinglyNode<T> nextNode = currentNode.getNext();
+				if (nextNode.getData().equals(data)) {
+					if (nextNode.equals(tail))
+						tail = currentNode;
+					currentNode.setNext(nextNode.getNext());
+					size--;
+					break;
+				}
+				currentNode = nextNode;
 			}
-			temp = temp.getNext();
-			len++;
+		}
+	}
+
+	@Override
+	public void removeAt(int position) throws ListException {
+		if (isEmpty())
+			throw new ListException("List is empty.");
+
+		if (position < 0 || position >= getSize())
+			throw new ListException("Position can be 0 to n-1 where n is the size of the list");
+
+		if (position == 0) {
+			if (size == 1) {
+				head = null;
+				tail = head;
+			} else
+				head = head.getNext();
+			size--;
+		} else {
+			SinglyNode<T> currentNode = head;
+			int index = 0;
+			while (currentNode != null && currentNode.getNext() != null) {
+				SinglyNode<T> nextNode = currentNode.getNext();
+				if (index == position - 1) {
+					if (nextNode.equals(tail))
+						tail = currentNode;
+					currentNode.setNext(nextNode.getNext());
+					size--;
+					break;
+				}
+				currentNode = nextNode;
+				index++;
+			}
+		}
+	}
+
+	@Override
+	public void removeAllObjects(T data) throws ListException {
+		if (isEmpty())
+			throw new ListException("List is empty.");
+		do {
+			if (head.getData().equals(data)) {
+				head = head.getNext();
+				size--;
+				if (head == null)
+					tail = head;
+			} else
+				break;
+		} while (head != null);
+
+		SinglyNode<T> currentNode = head;
+		while (currentNode != null && currentNode.getNext() != null) {
+			SinglyNode<T> nextNode = currentNode.getNext();
+			if (nextNode.getData().equals(data)) {
+				if (nextNode.equals(tail))
+					tail = currentNode;
+				currentNode.setNext(nextNode.getNext());
+				size--;
+			} else
+				currentNode = nextNode;
+		}
+	}
+
+	@Override
+	public T get(int position) throws ListException {
+		if (position >= getSize() || position < 0)
+			throw new ListException("Position can be 0 to n-1 where n is the size of the list");
+
+		T dataToBeReturned = null;
+		if (position == getSize() - 1)
+			return tail.getData();
+		else {
+			SinglyNode<T> currentNode = head;
+			int index = 0;
+			while (currentNode != null) {
+				if (position == index) {
+					dataToBeReturned = currentNode.getData();
+					break;
+				}
+				currentNode = currentNode.getNext();
+				index++;
+			}
+		}
+		return dataToBeReturned;
+	}
+
+	@Override
+	public int getPositionOf(T data) {
+		SinglyNode<T> currentNode = head;
+		int index = 0;
+		while (currentNode != null) {
+			if (currentNode.getData().equals(data)) {
+				return index;
+			}
+			currentNode = currentNode.getNext();
+			index++;
 		}
 		return -1;
 	}
 
-	public void deleteFirst() {
-		if (head == null) {
-			return;
-		}
-		head = head.getNext();
-		size--;
+	@Override
+	public boolean isEmpty() {
+		return getSize() == 0;
 	}
 
-	public void deleteLast() {
-		if (isEmpty()) {
-			System.out.println("List is empty!!! No deletion happened.");
-			return;
-		}
-		SinglyNode<T> secondLast = head;
-		while (secondLast.getNext().getNext() != null)
-			secondLast = secondLast.getNext();
-
-		secondLast.setNext(null);
-		size--;
+	@Override
+	public int getSize() {
+		return size;
 	}
 
-	public void deleteAt(int position) {
-		if (head == null) {
-			System.out.println("List is empty!!! No deletion happened.");
-			return;
+	@Override
+	public String toString() {
+		String result = "";
+		SinglyNode<T> currentNode = head;
+		while (currentNode != null) {
+			result += (currentNode.getData() + " ");
+			currentNode = currentNode.getNext();
 		}
-
-		int len = getSize();
-		if (position < 0 || position >= len) {
-			System.out.println("Invalid Position");
-			return;
-		}
-
-		if (position == 0) {
-			deleteFirst();
-		} else if (position == len - 1) {
-			deleteLast();
-		} else {
-			len = 0;
-			SinglyNode<T> temp = head;
-			while (temp != null) {
-				if (len == (position - 1)) {
-					temp.setNext(temp.getNext().getNext());
-					break;
-				}
-				temp = temp.getNext();
-				len++;
-			}
-			size--;
-		}
-	}
-
-	public void delete(T data) {
-		int pos = findPosition(data);
-		if (pos == -2) {
-			System.out.println("List is empty!!! Element not found.");
-			return;
-		} else if (pos == -1) {
-			System.out.println("Element not found!!!");
-			return;
-		}
-		deleteAt(pos);
-	}
-
-	public void deleteAll(T data) {
-		int pos = findPosition(data);
-		boolean flag = false;
-		while (pos >= 0) {
-			flag = true;
-			deleteAt(pos);
-			pos = findPosition(data);
-		}
-
-		if (!flag) {
-			if (pos == -2)
-				System.out.println("List is empty!!! Element not found.");
-			else if (pos == -1)
-				System.out.println("Element not found!!!");
-		}
-	}
-
-	public void deleteNode(SinglyNode<T> node) {
-		SinglyNode<T> next = node.getNext();
-		System.out.println(node.getData());
-		node=next;
-		System.out.println(node.getData());
+		return result;
 	}
 	
-	public void deleteAlt() {
-		if(head.getNext()==null)
-            return;
-        
-        SinglyNode<T> temp=head;
-        while(temp!=null && temp.getNext()!=null){
-            temp.setNext(temp.getNext().getNext());
-            temp=temp.getNext();
-        }
-	}
-
-	public void reverse() {
-		SinglyNode<T> prev = null;
-		SinglyNode<T> temp = getHead();
-		SinglyNode<T> next;
-		while (temp != null) {
-			next = temp.getNext();
-			temp.setNext(prev);
-			prev = temp;
-			temp = next;
-		}
-		setHead(prev);
-	}
-
 	public void reverseAlternateNodes() {
 		SinglyNode<T> iteratorNode = getHead();
 		SinglyNode<T> temp, prev = null;
@@ -224,25 +241,19 @@ public class SinglyLinkedList<T> {
 			iteratorNode = iteratorNode.getNext();
 		}
 	}
+	
 
-	public boolean isEmpty() {
-		return head == null;
+	public void deleteAlt() {
+		if(head.getNext()==null)
+            return;
+        
+        SinglyNode<T> temp=head;
+        while(temp!=null && temp.getNext()!=null){
+            temp.setNext(temp.getNext().getNext());
+            temp=temp.getNext();
+        }
 	}
-
-	public void displayList() {
-		System.out.print("[");
-		SinglyNode<T> temp = getHead();
-		if (temp != null) {
-			while (temp.getNext() != null) {
-				System.out.print(temp.getData() + ", ");
-				temp = temp.getNext();
-			}
-			System.out.print(temp.getData());
-		}
-		System.out.print("]");
-		System.out.println();
-	}
-
+	
 	public void replace(int position, T newData) {
 		int count = 0;
 		SinglyNode<T> temp = head;
@@ -348,7 +359,7 @@ public class SinglyLinkedList<T> {
 	public boolean findAndEliminateLoop() {// using hashmap
 		SinglyNode<T> i = head;
 
-		HashMap<SinglyNode<T>, SinglyNode<T>> hm = new HashMap<>();
+		Map<SinglyNode<T>, SinglyNode<T>> hm = new HashMap<>();
 		while (i.getNext() != null) {
 			if (hm.containsKey(i.getNext())) {
 				i.setNext(null);
@@ -362,7 +373,7 @@ public class SinglyLinkedList<T> {
 
 	public boolean findAndEliminateLoop1() {// using hashset
 		SinglyNode<T> t = head;
-		HashSet<SinglyNode<T>> hs = new HashSet<>();
+		Set<SinglyNode<T>> hs = new HashSet<>();
 		SinglyNode<T> prev = null;
 		while (t != null) {
 			if (hs.contains(t)) {
@@ -376,4 +387,130 @@ public class SinglyLinkedList<T> {
 		}
 		return false;
 	}
+	
+	public void reverse() {
+		SinglyNode<T> prev = null;
+		SinglyNode<T> temp = getHead();
+		SinglyNode<T> next;
+		while (temp != null) {
+			next = temp.getNext();
+			temp.setNext(prev);
+			prev = temp;
+			temp = next;
+		}
+		setHead(prev);
+	}
 }
+
+
+	
+
+	
+
+//	public void deleteFirst() {
+//		if (head == null) {
+//			return;
+//		}
+//		head = head.getNext();
+//		size--;
+//	}
+//
+//	public void deleteLast() {
+//		if (isEmpty()) {
+//			System.out.println("List is empty!!! No deletion happened.");
+//			return;
+//		}
+//		SinglyNode<T> secondLast = head;
+//		while (secondLast.getNext().getNext() != null)
+//			secondLast = secondLast.getNext();
+//
+//		secondLast.setNext(null);
+//		size--;
+//	}
+//
+//	public void deleteAt(int position) {
+//		if (head == null) {
+//			System.out.println("List is empty!!! No deletion happened.");
+//			return;
+//		}
+//
+//		int len = getSize();
+//		if (position < 0 || position >= len) {
+//			System.out.println("Invalid Position");
+//			return;
+//		}
+//
+//		if (position == 0) {
+//			deleteFirst();
+//		} else if (position == len - 1) {
+//			deleteLast();
+//		} else {
+//			len = 0;
+//			SinglyNode<T> temp = head;
+//			while (temp != null) {
+//				if (len == (position - 1)) {
+//					temp.setNext(temp.getNext().getNext());
+//					break;
+//				}
+//				temp = temp.getNext();
+//				len++;
+//			}
+//			size--;
+//		}
+//	}
+//
+//	public void delete(T data) {
+//		int pos = findPosition(data);
+//		if (pos == -2) {
+//			System.out.println("List is empty!!! Element not found.");
+//			return;
+//		} else if (pos == -1) {
+//			System.out.println("Element not found!!!");
+//			return;
+//		}
+//		deleteAt(pos);
+//	}
+//
+//	public void deleteAll(T data) {
+//		int pos = findPosition(data);
+//		boolean flag = false;
+//		while (pos >= 0) {
+//			flag = true;
+//			deleteAt(pos);
+//			pos = findPosition(data);
+//		}
+//
+//		if (!flag) {
+//			if (pos == -2)
+//				System.out.println("List is empty!!! Element not found.");
+//			else if (pos == -1)
+//				System.out.println("Element not found!!!");
+//		}
+//	}
+//
+//	public void deleteNode(SinglyNode<T> node) {
+//		SinglyNode<T> next = node.getNext();
+//		System.out.println(node.getData());
+//		node=next;
+//		System.out.println(node.getData());
+//	}
+	
+//
+//	public void displayList() {
+//		System.out.print("[");
+//		SinglyNode<T> temp = getHead();
+//		if (temp != null) {
+//			while (temp.getNext() != null) {
+//				System.out.print(temp.getData() + ", ");
+//				temp = temp.getNext();
+//			}
+//			System.out.print(temp.getData());
+//		}
+//		System.out.print("]");
+//		System.out.println();
+//	}
+
+	
+
+	
+

@@ -1,6 +1,7 @@
 package problemsonstacks;
 
 import customexceptions.EmptyStackException;
+import customexceptions.ListException;
 import lists.SinglyLinkedList;
 import stacks.StackUsingLL;
 
@@ -10,7 +11,7 @@ import stacks.StackUsingLL;
  */
 public class SmallerElementDeletion {
 
-	public static SinglyLinkedList<Integer> deleteSmallerElements(Integer[] arr, int k) throws EmptyStackException {
+	public static SinglyLinkedList<Integer> deleteSmallerElements(Integer[] arr, int k) throws EmptyStackException, ListException {
 		int len = arr.length;
 		StackUsingLL<Integer> stk = new StackUsingLL<>();
 		int j = 0;
@@ -28,13 +29,13 @@ public class SmallerElementDeletion {
 
 		SinglyLinkedList<Integer> sll = new SinglyLinkedList<Integer>();
 		while (stk.getSize() != 0) {
-			sll.insertAtStart(stk.pop());
+			sll.add(stk.pop(),0);
 		}
 
 		return sll;
 	}
 
-	public static void main(String[] args) throws EmptyStackException {
+	public static void main(String[] args) throws EmptyStackException, ListException {
 		// Integer[] arr= {3, 100, 1 };
 		// int k=1;
 		// Integer[] arr = {20, 10, 25, 30, 40};
@@ -43,7 +44,7 @@ public class SmallerElementDeletion {
 		int k = 3;
 
 		SinglyLinkedList<Integer> sll = deleteSmallerElements(arr, k);
-		sll.displayList();
+		System.out.println(sll);
 	}
 
 }

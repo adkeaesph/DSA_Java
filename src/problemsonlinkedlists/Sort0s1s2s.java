@@ -76,19 +76,19 @@ public class Sort0s1s2s {
 	public static void main(String[] args) {
 		
 		SinglyLinkedList<Integer> sll=new SinglyLinkedList<Integer>();
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(0);
-		sll.insertAtEnd(0);
-		sll.insertAtEnd(1);
-		sll.insertAtEnd(0);
-		sll.insertAtEnd(2);
-		sll.insertAtEnd(1);
-		sll.insertAtEnd(1);
-		sll.displayList();
+		sll.add(2);
+		sll.add(2);
+		sll.add(0);
+		sll.add(0);
+		sll.add(1);
+		sll.add(0);
+		sll.add(2);
+		sll.add(1);
+		sll.add(1);
+		System.out.println(sll);
 		
 		sll.setHead(sort0s1s2s(sll.getHead()));
-		sll.displayList();
+		System.out.println(sll);
 	}
 
 }

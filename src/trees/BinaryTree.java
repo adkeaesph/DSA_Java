@@ -81,7 +81,7 @@ public class BinaryTree<T> {
 
 	public SinglyLinkedList<T> convertTreeToList() {
 		SinglyLinkedList<T> list = new SinglyLinkedList<>();
-		list.insertAtEnd(root.getData());
+		list.add(root.getData());
 		fillList(list);
 		return list;
 	}
@@ -91,7 +91,7 @@ public class BinaryTree<T> {
 		boolean leftExists = false;
 		if (getRoot().getLeft() != null) {
 			leftExists = true;
-			list.insertAtEnd(getRoot().getLeft().getData());
+			list.add(getRoot().getLeft().getData());
 			left.setRoot(getRoot().getLeft());
 		}
 
@@ -99,7 +99,7 @@ public class BinaryTree<T> {
 		boolean rightExists = false;
 		if (getRoot().getRight() != null) {
 			rightExists = true;
-			list.insertAtEnd(getRoot().getRight().getData());
+			list.add(getRoot().getRight().getData());
 			right.setRoot(getRoot().getRight());
 		}
 		if (leftExists)
@@ -187,11 +187,11 @@ public class BinaryTree<T> {
 			int i=1,j=1;
 			while (temp != null) {
 				if(i<=limit) {
-					tempList.insertAtEnd(temp.getData());
+					tempList.add(temp.getData());
 				}else {
 					stkOfLists.push(tempList);
 					tempList=new SinglyLinkedList<>();
-					tempList.insertAtEnd(temp.getData());
+					tempList.add(temp.getData());
 					limit+=j*2;
 					j++;
 				}
@@ -203,7 +203,7 @@ public class BinaryTree<T> {
 		
 		while(stkOfLists.getSize()!=0) {
 			tempList=stkOfLists.pop();
-			tempList.displayList();
+			System.out.println(tempList);
 		}
 	}
 	

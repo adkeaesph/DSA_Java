@@ -1,260 +1,246 @@
 package lists;
 
-public class DoublyLinkedList {
+import customexceptions.ListException;
 
-    public class Node{
-        int data;
-        Node prev;
-        Node next;
+public class DoublyLinkedList<T> implements List<T> {
 
-        Node(int data){
-            this.data=data;
-            prev=null;
-            next=null;
-        }
-    }
+	private DoublyNode<T> head;
+	private DoublyNode<T> tail;
+	private int size;
 
-    public Node createList(){
-        return null;
-    }
+	public DoublyLinkedList() {
+		head = null;
+		tail = null;
+		size = 0;
+	}
 
-    public int size(Node head){
-        int length=0;
-        if(head==null)
-            return length;
+	@Override
+	public void add(T data) {
+		if (head == null) {
+			head = new DoublyNode<>(data);
+			tail = head;
+		} else {
+			DoublyNode<T> newNode = new DoublyNode<>(data);
+			tail.setNext(newNode);
+			newNode.setPrevious(tail);
+			tail = tail.getNext();
+		}
+		size++;
+	}
 
-        Node temp=head;
-        while(temp!=null){
-            length++;
-            temp=temp.next;
-        }
-        return length;
-    }
+	@Override
+	public void add(T data, int position) throws ListException {
+		if (position < 0 || position > getSize())
+			throw new ListException("Position can be 0 to n-1 where n is the size of the list");
 
-    public Node insertAtStart(Node head, int data){
-        Node node=new Node(data);
-        if(head==null)
-            return node;
+		if (position == 0) {
+			if (getSize() == 0) {
+				add(data);
+			} else {
+				DoublyNode<T> newNode = new DoublyNode<>(data);
+				newNode.setNext(head);
+				head.setPrevious(newNode);
+				head = newNode;
+				size++;
+			}
+		} else if (position == getSize())
+			add(data);
+		else {
+			DoublyNode<T> currentNode = head.getNext();
+			int index = 1;
+			while (currentNode != null) {
+				if (index == position) {
+					DoublyNode<T> newNode = new DoublyNode<>(data);
+					DoublyNode<T> previousNode = currentNode.getPrevious();
+					DoublyNode<T> nextNode = currentNode;
 
-        node.next=head;
-        head.prev=node;
-        head=node;
-        return head;
-    }
+					previousNode.setNext(newNode);
+					newNode.setNext(nextNode);
+					nextNode.setPrevious(newNode);
+					newNode.setPrevious(previousNode);
+					size++;
+					break;
+				}
+				currentNode = currentNode.getNext();
+				index++;
+			}
+		}
+	}
 
-    public Node insertAtEnd(Node head, int data){
-        Node node=new Node(data);
-        if(head==null)
-            return node;
+	@Override
+	public void removeObject(T data) throws ListException {
+		if (isEmpty())
+			throw new ListException("List is empty.");
 
-        Node last=head;
-        while(last.next!=null){
-            last=last.next;
-        }
+		if (head.getData().equals(data)) {
+			if (size == 1) {
+				head = null;
+				tail = head;
+			} else {
+				head = head.getNext();
+				head.setPrevious(null);
+			}
+			size--;
+		} else {
+			DoublyNode<T> currentNode = head;
+			while (currentNode != null && currentNode.getNext() != null) {
+				DoublyNode<T> nextNode = currentNode.getNext();
+				if (nextNode.getData().equals(data)) {
+					currentNode.setNext(nextNode.getNext());
+					if (nextNode.equals(tail))
+						tail = currentNode;
+					else
+						currentNode.getNext().setPrevious(currentNode);
+					size--;
+					break;
+				}
+				currentNode = currentNode.getNext();
+			}
+		}
+	}
 
-        last.next=node;
-        node.prev=last;
+	@Override
+	public void removeAt(int position) throws ListException {
+		if (isEmpty())
+			throw new ListException("List is empty.");
 
-        return head;
-    }
+		if (position < 0 || position >= getSize())
+			throw new ListException("Position can be 0 to n-1 where n is the size of the list");
 
-    public Node insertAtPosition(Node head, int position, int data){
-        int lcount=size(head);
+		if (position == 0) {
+			if (size == 1) {
+				head = null;
+				tail = head;
+			} else {
+				head = head.getNext();
+				head.setPrevious(null);
+			}
+			size--;
+		} else if (position == getSize() - 1) {
+			tail = tail.getPrevious();
+			tail.setNext(null);
+			size--;
+		} else {
+			DoublyNode<T> currentNode = head.getNext();
+			int index = 1;
+			while (currentNode != null) {
+				if (index == position) {
+					DoublyNode<T> previousNode = currentNode.getPrevious();
+					DoublyNode<T> nextNode = currentNode.getNext();
 
-        if(position>lcount || position<0){
-            System.out.println("Invalid Position");
-            return head;
-        }
-        if(position==0){
-            return insertAtStart(head, data);
-        }else if(position==lcount){
-            return insertAtEnd(head, data);
-        }
-        lcount=0;
-        Node temp=head;
-        Node node=new Node(data);
-        while(temp != null){
-            lcount++;
-            if(lcount==position){
-                node.prev=temp;
-                node.next=temp.next;
-                temp.next=node;
-                node.next.prev=node;
-                break;
-            }
-            temp=temp.next;
-        }
-        return head;
-    }
+					previousNode.setNext(nextNode);
+					if (nextNode != null)
+						nextNode.setPrevious(previousNode);
+					else
+						tail = previousNode;
+					size--;
+					break;
+				}
+				currentNode = currentNode.getNext();
+				index++;
+			}
+		}
+	}
 
-    public int findPosition(Node head, int data){
-        if(head==null)
-            return -2;
+	@Override
+	public void removeAllObjects(T data) throws ListException {
+		if (isEmpty())
+			throw new ListException("List is empty.");
 
-        Node temp=head;
-        int len=0;
-        while(temp!=null){
-            if(temp.data==data) {
-                return len;
-            }
-            temp=temp.next;
-            len++;
-        }
-        return -1;
-    }
+		do {
+			if (head.getData().equals(data)) {
+				head = head.getNext();
+				head.setPrevious(null);
+				size--;
+				if (head == null)
+					tail = head;
+			} else
+				break;
+		} while (head != null);
 
-    public Node deleteFirst(Node head){
-        if(head==null) {
-            System.out.println("List is empty!!! No deletion happened.");
-            return null;
-        }
+		DoublyNode<T> currentNode = head.getNext();
+		while (currentNode != null) {
+			if (currentNode.getData().equals(data)) {
+				DoublyNode<T> previousNode = currentNode.getPrevious();
+				DoublyNode<T> nextNode = currentNode.getNext();
+				previousNode.setNext(nextNode);
+				if (nextNode != null)
+					nextNode.setPrevious(previousNode);
+				else
+					tail = previousNode;
+				currentNode = previousNode;
+				size--;
+			} else
+				currentNode = currentNode.getNext();
+		}
+	}
 
-        head=head.next;
-        head.prev=null;
-        return head;
-    }
+	@Override
+	public T get(int position) throws ListException {
+		if (position >= getSize() || position < 0)
+			throw new ListException("Position can be 0 to n-1 where n is the size of the list");
 
-    public Node deleteLast(Node head){
-        if(head==null) {
-            System.out.println("List is empty!!! No deletion happened.");
-            return null;
-        }
-        Node secondLast=head;
-        while(secondLast.next.next!=null)
-            secondLast=secondLast.next;
+		T dataToBeReturned = null;
+		if (position == getSize() - 1)
+			return tail.getData();
+		else {
+			DoublyNode<T> currentNode = head;
+			int index = 0;
+			while (currentNode != null) {
+				if (position == index) {
+					dataToBeReturned = currentNode.getData();
+					break;
+				}
+				currentNode = currentNode.getNext();
+				index++;
+			}
+		}
+		return dataToBeReturned;
+	}
 
-        secondLast.next=null;
-        return head;
-    }
+	@Override
+	public int getPositionOf(T data) {
+		DoublyNode<T> currentNode = head;
+		int index = 0;
+		while (currentNode != null) {
+			if (currentNode.getData().equals(data)) {
+				return index;
+			}
+			currentNode = currentNode.getNext();
+			index++;
+		}
+		return -1;
+	}
 
-    public Node deleteAt(Node head, int position){
-        if(head==null){
-            System.out.println("List is empty!!! No deletion happened.");
-            return null;
-        }
+	@Override
+	public boolean isEmpty() {
+		return getSize() == 0;
+	}
 
-        int len=size(head);
-        if(position<0 || position>=len){
-            System.out.println("Invalid Position");
-            return head;
-        }
+	@Override
+	public int getSize() {
+		return size;
+	}
 
-        if(position==0)
-            return deleteFirst(head);
-        else if(position==len-1)
-            return deleteLast(head);
+	@Override
+	public String toString() {
+		String result = "";
+		DoublyNode<T> currentNode = head;
+		while (currentNode != null) {
+			result += (currentNode.getData() + " ");
+			currentNode = currentNode.getNext();
+		}
+		return result;
+	}
 
-        len=0;
-        Node temp=head;
-        while(temp!=null){
-            if(len==(position-1)){
-                temp.next=temp.next.next;
-                temp.next.prev=temp;
-                break;
-            }
-            temp=temp.next;
-            len++;
-        }
-        return head;
-    }
+	public String reverse() {
+		String result = "";
+		DoublyNode<T> currentNode = tail;
+		while (currentNode != null) {
+			result += (currentNode.getData() + " ");
+			currentNode = currentNode.getPrevious();
+		}
+		return result;
+	}
 
-    public Node delete(Node head,int data){
-        int pos=findPosition(head,data);
-        if(pos==-2){
-            System.out.println("List is empty!!! Element not found.");
-            return null;
-        }else if(pos==-1){
-            System.out.println("Element not found!!!");
-            return head;
-        }
-        return deleteAt(head,pos);
-    }
-
-    public Node deleteAll(Node head,int data){
-        int pos=findPosition(head,data);
-        boolean flag=false;
-        while(pos>=0){
-            flag=true;
-            head=deleteAt(head,pos);
-            pos=findPosition(head,data);
-        }
-
-        if(!flag){
-            if(pos==-2)
-                System.out.println("List is empty!!! Element not found.");
-            else if(pos==-1)
-                System.out.println("Element not found!!!");
-        }
-
-        return head;
-    }
-
-    public Node reverse(Node head){
-        if(head==null || head.next==null)
-            return head;
-
-        Node prev=null;
-        Node temp=head;
-        Node next;
-
-        while(temp!=null){
-            next=temp.next;
-            temp.next=prev;
-            temp.prev=next;
-            prev=temp;
-            temp=next;
-        }
-
-        return prev;
-    }
-
-    public void displayList(Node head){
-        System.out.print("[");
-        if(head==null) {
-            System.out.print("]");
-            System.out.println();
-            return;
-        }
-
-        if(head.next==null) {
-            System.out.print(head.data+"]");
-            System.out.println();
-            return;
-        }
-
-        while(head.next!=null){
-            System.out.print(head.data+" <-> ");
-            head=head.next;
-        }
-        System.out.print(head.data+"]");
-        System.out.println();
-    }
-
-    public void reverseDisplayList(Node head){
-        System.out.print("[");
-        if(head==null) {
-            System.out.print("]");
-            System.out.println();
-            return;
-        }
-
-        if(head.next==null) {
-            System.out.print(head.data+"]");
-            System.out.println();
-            return;
-        }
-
-        Node last=head;
-        while(last.next!=null){
-            last=last.next;
-        }
-
-        Node temp=last;
-        while(temp.prev!=null){
-            System.out.print(temp.data+" <-> ");
-            temp=temp.prev;
-        }
-        System.out.print(temp.data+"]");
-        System.out.println();
-    }
 }

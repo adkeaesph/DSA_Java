@@ -49,7 +49,7 @@ public class PalindromeProblem {
 		temp.setNext(new SinglyNode<Integer>(13));
 		SinglyLinkedList<Integer> sll=new SinglyLinkedList<Integer>();
 		sll.setHead(head);
-		sll.displayList();
+		System.out.println(sll);
 		System.out.println(isPalindrome(head));
 	}
 }
